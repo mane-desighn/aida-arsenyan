@@ -10,21 +10,17 @@
 
 <style>
 
-/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
+html, body {
     scroll-behavior: smooth;
-}
-
-body {
+    overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
     color: #2d2d2d;
-    overflow-x: hidden;
 }
 
 /* NAV */
@@ -44,15 +40,20 @@ nav h2 {
 }
 
 nav a {
-    margin-left: 20px;
+    margin-left: 25px;
     text-decoration: none;
     color: #444;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #E85C90;
 }
 
 /* HERO */
 .hero {
-    min-height: 100vh; /* fallback */
-    min-height: 100svh; /* mobile safe */
+    min-height: 100vh;
+    min-height: 100svh; /* ✅ mobile-safe */
     background: linear-gradient(135deg, #E85C90, #f9a8d4);
     display: flex;
     align-items: center;
@@ -63,18 +64,35 @@ nav a {
 }
 
 .hero h1 {
-    font-size: 40px;
+    font-size: 48px;
 }
 
 .hero p {
-    margin-top: 10px;
-    font-size: 18px;
+    margin-top: 15px;
+    font-size: 20px;
     max-width: 600px;
+}
+
+.hero button {
+    margin-top: 25px;
+    padding: 14px 30px;
+    border: none;
+    background: white;
+    color: #E85C90;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background: #2d2d2d;
+    color: white;
 }
 
 /* SECTIONS */
 .section {
-    padding: 80px 10%;
+    padding: 90px 10%;
 }
 
 .section:nth-child(even) {
@@ -83,7 +101,54 @@ nav a {
 
 .section h2 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    font-size: 28px;
+    color: #E85C90;
+}
+
+/* ABOUT */
+.about {
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* SKILLS */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skills span {
+    background: #ffe4ec;
+    color: #E85C90;
+    padding: 10px 16px;
+    margin: 8px;
+    border-radius: 25px;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card h4 {
     color: #E85C90;
 }
 
@@ -95,17 +160,35 @@ nav a {
 
 /* FOOTER */
 footer {
+    text-align: center;
+    padding: 30px;
     background: #E85C90;
     color: white;
-    text-align: center;
-    padding: 25px;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 28px; }
-    .hero p { font-size: 15px; }
-    .section { padding: 60px 6%; }
+
+    nav {
+        padding: 15px 5%;
+    }
+
+    nav a {
+        margin-left: 12px;
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 60px 6%;
+    }
 }
 
 </style>
@@ -118,6 +201,8 @@ footer {
     <div>
         <a href="#">Home</a>
         <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
     </div>
 </nav>
@@ -125,47 +210,92 @@ footer {
 <section class="hero">
     <div>
         <h1>Hello, I'm Aida ✨</h1>
-        <p>I’m passionate about cybersecurity and building a future in tech.</p>
+        <p>
+            A passionate cybersecurity enthusiast who loves exploring technology,
+            solving problems, and continuously growing in the digital world.
+        </p>
+        <button onclick="document.getElementById('contact').scrollIntoView()">
+            Let’s Connect
+        </button>
     </div>
 </section>
 
 <section class="section" id="about">
     <h2>About Me</h2>
-    <p style="text-align:center; max-width:600px; margin:auto;">
-        I enjoy learning, solving problems, and growing in the world of technology.
-        My goal is to become a skilled cybersecurity professional.
-    </p>
+    <div class="about">
+        I am a curious and motivated individual who enjoys learning and improving every day.
+        My background in customer support and content management helped me build strong
+        communication and analytical skills.
+        <br><br>
+        Today, I am focused on cybersecurity — understanding systems, exploring vulnerabilities,
+        and building a future where technology is both innovative and secure.
+    </div>
+</section>
+
+<section class="section" id="skills">
+    <h2>Skills & Strengths</h2>
+    <div class="skills">
+        <span>Python</span>
+        <span>C++</span>
+        <span>JavaScript</span>
+        <span>HTML</span>
+        <span>Linux</span>
+        <span>Nmap</span>
+        <span>Metasploit</span>
+        <span>Problem Solving</span>
+        <span>Communication</span>
+    </div>
+</section>
+
+<section class="section" id="experience">
+    <h2>My Experience</h2>
+    <div class="cards">
+
+        <div class="card">
+            <h4>Sportserve</h4>
+            <p>Payments Operations Specialist ensuring smooth and secure transactions.</p>
+        </div>
+
+        <div class="card">
+            <h4>Vmedia</h4>
+            <p>Remote support specialist helping customers and solving issues efficiently.</p>
+        </div>
+
+        <div class="card">
+            <h4>Kwork</h4>
+            <p>Content manager focused on clarity, structure, and engagement.</p>
+        </div>
+
+    </div>
 </section>
 
 <section class="section contact" id="contact">
-    <h2>Contact</h2>
+    <h2>Let’s Connect</h2>
     <p>📞 +374 94 84 78 56</p>
     <p>📧 arsenyan-aida@mail.ru</p>
     <p>📍 Vanadzor, Armenia</p>
 </section>
 
 <footer>
-    Aida Arsenyan © 2026
+    Made with passion • Aida Arsenyan © 2026
 </footer>
 
 <script>
 
-/* 🔥 CRITICAL FIX */
+/* ✅ STOP browser restoring scroll */
 if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
 
-/* ALWAYS FORCE TOP */
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        window.scrollTo(0, 0);
-    }, 0);
-});
-
-/* PREVENT HASH JUMP (like #contact) */
+/* ✅ REMOVE any #contact auto jump */
 if (window.location.hash) {
-    history.replaceState(null, null, ' ');
+    history.replaceState(null, null, window.location.pathname);
 }
+
+/* ✅ FORCE TOP (reliable) */
+window.addEventListener('load', () => {
+    setTimeout(() => window.scrollTo(0, 0), 0);
+});
 
 </script>
 
