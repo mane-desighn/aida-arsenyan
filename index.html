@@ -10,15 +10,17 @@
 
 <style>
 
+/* GLOBAL */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
+html, body {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
-    background: #fff;
     color: #2d2d2d;
 }
 
@@ -31,7 +33,7 @@ nav {
     background: white;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 100;
 }
 
 nav h2 {
@@ -51,7 +53,7 @@ nav a:hover {
 
 /* HERO */
 .hero {
-    height: 100vh;
+    min-height: 100dvh; /* FIXED MOBILE ISSUE */
     background: linear-gradient(135deg, #E85C90, #f9a8d4);
     display: flex;
     align-items: center;
@@ -63,14 +65,12 @@ nav a:hover {
 
 .hero h1 {
     font-size: 48px;
-    margin-bottom: 15px;
 }
 
 .hero p {
+    margin-top: 15px;
     font-size: 20px;
     max-width: 600px;
-    margin: auto;
-    opacity: 0.95;
 }
 
 .hero button {
@@ -112,7 +112,6 @@ nav a:hover {
     margin: auto;
     text-align: center;
     line-height: 1.8;
-    font-size: 16px;
 }
 
 /* SKILLS */
@@ -128,7 +127,6 @@ nav a:hover {
     padding: 10px 16px;
     margin: 8px;
     border-radius: 25px;
-    font-weight: 500;
 }
 
 /* CARDS */
@@ -158,7 +156,6 @@ nav a:hover {
 .contact p {
     text-align: center;
     margin: 10px;
-    font-size: 16px;
 }
 
 /* FOOTER */
@@ -167,6 +164,31 @@ footer {
     padding: 30px;
     background: #E85C90;
     color: white;
+}
+
+/* MOBILE FIXES */
+@media (max-width: 768px) {
+
+    nav {
+        padding: 15px 5%;
+    }
+
+    nav a {
+        margin-left: 12px;
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 60px 6%;
+    }
 }
 
 </style>
@@ -191,11 +213,12 @@ footer {
     <div>
         <h1>Hello, I'm Aida ✨</h1>
         <p>
-            I’m passionate about cybersecurity, technology, and continuous growth.
-            I enjoy exploring how systems work, finding solutions, and building a future in tech
-            where security and innovation go hand in hand.
+            A passionate cybersecurity enthusiast who loves exploring technology,
+            solving problems, and continuously growing in the digital world.
         </p>
-        <button onclick="document.getElementById('contact').scrollIntoView()">Let's Connect</button>
+        <button onclick="document.getElementById('contact').scrollIntoView()">
+            Let’s Connect
+        </button>
     </div>
 </section>
 
@@ -203,13 +226,12 @@ footer {
 <section class="section" id="about">
     <h2>About Me</h2>
     <div class="about">
-        I’m a curious and driven individual who believes that learning never stops.
-        My journey started with customer support and content management, where I developed strong communication
-        and problem-solving skills. Over time, my interest naturally shifted toward technology and cybersecurity.
+        I am a curious and motivated individual who enjoys learning and improving every day.
+        My background in customer support and content management helped me build strong
+        communication and analytical skills.
         <br><br>
-        Today, I focus on building technical knowledge, understanding systems, and growing into a professional
-        who can contribute to secure and meaningful digital experiences. I enjoy challenges, and I see every
-        obstacle as an opportunity to improve.
+        Today, I am focused on cybersecurity — understanding systems, exploring vulnerabilities,
+        and building a future where technology is both innovative and secure.
     </div>
 </section>
 
@@ -225,7 +247,6 @@ footer {
         <span>Nmap</span>
         <span>Metasploit</span>
         <span>Problem Solving</span>
-        <span>Analytical Thinking</span>
         <span>Communication</span>
     </div>
 </section>
@@ -237,17 +258,17 @@ footer {
 
         <div class="card">
             <h4>Sportserve</h4>
-            <p>Worked as a Payments Operations Specialist, ensuring accuracy and smooth financial processes.</p>
+            <p>Payments Operations Specialist ensuring smooth and secure transactions.</p>
         </div>
 
         <div class="card">
             <h4>Vmedia</h4>
-            <p>Provided remote customer support, solving issues and improving user satisfaction.</p>
+            <p>Remote support specialist helping customers and solving issues efficiently.</p>
         </div>
 
         <div class="card">
             <h4>Kwork</h4>
-            <p>Managed and optimized content, focusing on clarity, structure, and engagement.</p>
+            <p>Content manager focused on clarity, structure, and engagement.</p>
         </div>
 
     </div>
@@ -265,6 +286,13 @@ footer {
 <footer>
     Made with passion • Aida Arsenyan © 2026
 </footer>
+
+<!-- FORCE LOAD TOP FIX -->
+<script>
+window.onload = function() {
+    window.scrollTo(0, 0);
+};
+</script>
 
 </body>
 </html>
