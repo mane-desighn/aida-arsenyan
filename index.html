@@ -18,82 +18,101 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #f8fafc;
-    color: #1e293b;
+    background: #fff;
+    color: #2d2d2d;
 }
 
-/* NAVBAR */
+/* NAV */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 10%;
+    padding: 20px 8%;
     background: white;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
+    z-index: 10;
 }
 
 nav h2 {
-    color: #3b82f6;
+    color: #E85C90;
 }
 
 nav a {
-    margin-left: 20px;
+    margin-left: 25px;
     text-decoration: none;
-    color: #1e293b;
+    color: #444;
     font-weight: 500;
+}
+
+nav a:hover {
+    color: #E85C90;
 }
 
 /* HERO */
 .hero {
-    height: 90vh;
+    height: 100vh;
+    background: linear-gradient(135deg, #E85C90, #f9a8d4);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(135deg, #3b82f6, #6366f1);
     color: white;
     padding: 20px;
 }
 
 .hero h1 {
-    font-size: 40px;
+    font-size: 48px;
+    margin-bottom: 15px;
 }
 
 .hero p {
-    margin-top: 10px;
-    font-size: 18px;
-    opacity: 0.9;
+    font-size: 20px;
+    max-width: 600px;
+    margin: auto;
+    opacity: 0.95;
 }
 
 .hero button {
-    margin-top: 20px;
-    padding: 12px 25px;
+    margin-top: 25px;
+    padding: 14px 30px;
     border: none;
     background: white;
-    color: #3b82f6;
+    color: #E85C90;
     font-weight: 600;
-    border-radius: 25px;
+    border-radius: 30px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-/* SECTION */
+.hero button:hover {
+    background: #2d2d2d;
+    color: white;
+}
+
+/* SECTIONS */
 .section {
-    padding: 70px 10%;
+    padding: 90px 10%;
+}
+
+.section:nth-child(even) {
+    background: #fafafa;
 }
 
 .section h2 {
     text-align: center;
     margin-bottom: 40px;
+    font-size: 28px;
+    color: #E85C90;
 }
 
 /* ABOUT */
 .about {
-    max-width: 700px;
+    max-width: 750px;
     margin: auto;
     text-align: center;
-    line-height: 1.7;
+    line-height: 1.8;
+    font-size: 16px;
 }
 
 /* SKILLS */
@@ -104,46 +123,49 @@ nav a {
 }
 
 .skills span {
-    background: #e0e7ff;
-    color: #3730a3;
-    padding: 10px 15px;
+    background: #ffe4ec;
+    color: #E85C90;
+    padding: 10px 16px;
     margin: 8px;
-    border-radius: 20px;
+    border-radius: 25px;
+    font-weight: 500;
 }
 
-/* EXPERIENCE */
+/* CARDS */
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
 }
 
 .card {
     background: white;
-    padding: 20px;
-    border-radius: 12px;
+    padding: 25px;
+    border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+}
+
+.card h4 {
+    color: #E85C90;
 }
 
 /* CONTACT */
-.contact {
-    text-align: center;
-}
-
 .contact p {
-    margin: 10px 0;
+    text-align: center;
+    margin: 10px;
+    font-size: 16px;
 }
 
 /* FOOTER */
 footer {
     text-align: center;
-    padding: 20px;
-    background: #1e293b;
+    padding: 30px;
+    background: #E85C90;
     color: white;
 }
 
@@ -152,7 +174,7 @@ footer {
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <nav>
     <h2>Aida</h2>
     <div>
@@ -167,9 +189,13 @@ footer {
 <!-- HERO -->
 <section class="hero">
     <div>
-        <h1>Hello, I'm Aida 👋</h1>
-        <p>Cybersecurity Enthusiast & Tech Lover</p>
-        <button onclick="document.getElementById('contact').scrollIntoView()">Contact Me</button>
+        <h1>Hello, I'm Aida ✨</h1>
+        <p>
+            I’m passionate about cybersecurity, technology, and continuous growth.
+            I enjoy exploring how systems work, finding solutions, and building a future in tech
+            where security and innovation go hand in hand.
+        </p>
+        <button onclick="document.getElementById('contact').scrollIntoView()">Let's Connect</button>
     </div>
 </section>
 
@@ -177,16 +203,19 @@ footer {
 <section class="section" id="about">
     <h2>About Me</h2>
     <div class="about">
-        I am passionate about technology and cybersecurity, with experience in customer support,
-        content management, and operations. I enjoy solving problems, learning new tools, and
-        continuously growing in the tech field. My goal is to build a strong career in cybersecurity
-        and contribute to creating secure digital environments.
+        I’m a curious and driven individual who believes that learning never stops.
+        My journey started with customer support and content management, where I developed strong communication
+        and problem-solving skills. Over time, my interest naturally shifted toward technology and cybersecurity.
+        <br><br>
+        Today, I focus on building technical knowledge, understanding systems, and growing into a professional
+        who can contribute to secure and meaningful digital experiences. I enjoy challenges, and I see every
+        obstacle as an opportunity to improve.
     </div>
 </section>
 
 <!-- SKILLS -->
 <section class="section" id="skills">
-    <h2>Skills</h2>
+    <h2>Skills & Strengths</h2>
     <div class="skills">
         <span>Python</span>
         <span>C++</span>
@@ -195,33 +224,30 @@ footer {
         <span>Linux</span>
         <span>Nmap</span>
         <span>Metasploit</span>
-        <span>CRM Systems</span>
-        <span>Communication</span>
         <span>Problem Solving</span>
+        <span>Analytical Thinking</span>
+        <span>Communication</span>
     </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section class="section" id="experience">
-    <h2>Experience</h2>
+    <h2>My Experience</h2>
     <div class="cards">
 
         <div class="card">
             <h4>Sportserve</h4>
-            <p>Payments Operations Specialist</p>
-            <small>2025 - 2026</small>
+            <p>Worked as a Payments Operations Specialist, ensuring accuracy and smooth financial processes.</p>
         </div>
 
         <div class="card">
             <h4>Vmedia</h4>
-            <p>Call Center Operator (Remote)</p>
-            <small>2024 - 2025</small>
+            <p>Provided remote customer support, solving issues and improving user satisfaction.</p>
         </div>
 
         <div class="card">
             <h4>Kwork</h4>
-            <p>Content Manager (Remote)</p>
-            <small>2022 - 2025</small>
+            <p>Managed and optimized content, focusing on clarity, structure, and engagement.</p>
         </div>
 
     </div>
@@ -229,15 +255,15 @@ footer {
 
 <!-- CONTACT -->
 <section class="section contact" id="contact">
-    <h2>Contact</h2>
-    <p><i class="fa-solid fa-phone"></i> +374 94 84 78 56</p>
-    <p><i class="fa-solid fa-envelope"></i> arsenyan-aida@mail.ru</p>
-    <p><i class="fa-solid fa-location-dot"></i> Vanadzor, Armenia</p>
+    <h2>Let’s Connect</h2>
+    <p>📞 +374 94 84 78 56</p>
+    <p>📧 arsenyan-aida@mail.ru</p>
+    <p>📍 Vanadzor, Armenia</p>
 </section>
 
 <!-- FOOTER -->
 <footer>
-    © 2026 Aida Arsenyan | Personal Website
+    Made with passion • Aida Arsenyan © 2026
 </footer>
 
 </body>
